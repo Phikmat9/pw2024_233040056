@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas 6a</title>
-<style>
-    .odd,
+    <title>POST</title>
+    <style>
+         .odd,
     .due {
         display: inline-block;
         width: 50px;
@@ -19,16 +19,18 @@
     .due {
         background-color: red;
     }
-</style>
-
+    </style>
 </head>
 
 <body>
-    <a href="?angka=10"></a>
-    <br>
+    <form action="" method="post">
+        <input type="number" name="angka">
+        <input type="submit" value="Save">
+    </form>
+
     <?php 
-    if (isset($_GET["angka"])) {
-        $angka = $_GET["angka"];
+    if (isset($_POST["angka"])) {
+        $angka = $_POST["angka"];
         for ($i = $angka; $i >= 1; $i--){
             for ($j = 1; $j <= $i; $j++){
                 if ($i % 2 == 0) {
@@ -39,10 +41,8 @@
             }
             echo "<br>";
         }
-    } else {
-
     }
-    
     ?>
+
 </body>
 </html>
