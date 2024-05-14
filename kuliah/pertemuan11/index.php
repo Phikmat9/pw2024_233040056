@@ -1,22 +1,8 @@
 <?php
 
-//koneksi database
-$conn = mysqli_connect('localhost', 'root', '', 'pw2024_b_233040056' );
+require "functions.php";
 
-
-//lakukan query tabel mahasiswa
-$result = mysqli_query($conn, 'SELECT * FROM mahasiswa');
-
-
-//menyiapkan data mahasiswa (fetch)
-$rows = [];
-while($row = mysqli_fetch_assoc($result)) {
-     $rows[] = $row;
-}
-
-$mahasiswa = $rows;
-
-
+$mahasiswa= query("select * from mahasiswa");
 ?>
 
 
@@ -30,9 +16,11 @@ $mahasiswa = $rows;
   </head>
   <body>
 
-
     <div class="container">
         <h1>Daftar Mahasiswa</h1>
+
+        <a href="tambah.php" class="btn btn-primary">Tambah Daftar Mahasiswa</a>
+
         <table class="table">
   <thead>
     <tr>
