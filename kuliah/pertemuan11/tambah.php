@@ -1,3 +1,21 @@
+<?php
+require 'functions.php';
+
+// cek apakah tombol tambah sudah ditutup
+if (isset($_POST["tambah"])){
+
+  // cek apakah data berhasil ditambahkan
+ if (tambah ($_POST) > 0){
+ echo "<script>
+        alert ('data berhasil ditambahkan');
+
+        documet.location.href = 'index.php'; 
+       </script>";
+ }
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,22 +30,22 @@
     <div class="container ">
 
         <h1>Tambah Data Mahasiswa</h1>
-
-        <form action="method"="post">
+            
+        <form action="" method="post">
             <div class="mb-3">
-                <label for="nama" class="form-label">NIM</label>
+                <label for="nama" class="form-label">Nama</label>
                 <input type="text" class="form-control" id="nama" name="nama">
             </div>
             <div class="mb-3">
-                <label for="NIM" class="form-label">Email address</label>
+                <label for="NIM" class="form-label">NIM</label>
                 <input type="text" class="form-control" id="nim" name="nim">
             </div>
             <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
+                <label for="email" class="form-label">Email</label>
                 <input type="text" class="form-control" id="email" name="email">
             </div>
             <div class="mb-3">
-                <label for="jurusan" class="form-label">Email address</label>
+                <label for="jurusan" class="form-label">Jurusan</label>
                 <input type="text" class="form-control" id="jurusan" name="jurusan">
             </div>
 

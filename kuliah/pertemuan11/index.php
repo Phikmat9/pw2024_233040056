@@ -35,14 +35,14 @@ $mahasiswa= query("select * from mahasiswa");
   <tbody>
     <?php foreach($mahasiswa as $mhs) :   ?>
     <tr>
-    <td><?= $mhs['id']; ?></td>
+      <td><?= $mhs['id']; ?></td>
       <td><?= $mhs['nama']; ?></td>
       <td><?= $mhs['nim']; ?></td>
       <td><?= $mhs['email']; ?></td>
       <td><?= $mhs['jurusan']; ?></td>
       <td>
         <a href="#"><span class="badge text-bg-warning">Ubah</span></a>
-        <a href="#"><span class="badge text-bg-danger">Hapus</span></a>
+        <a href="hapus.php?id=<?= $mhs["id"];?>"><span class="badge text-bg-danger">Hapus</span></a>
       </td>
     </tr>
     <?php endforeach; ?>
