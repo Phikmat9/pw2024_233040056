@@ -41,8 +41,8 @@ $mahasiswa= query("select * from mahasiswa");
       <td><?= $mhs['email']; ?></td>
       <td><?= $mhs['jurusan']; ?></td>
       <td>
-        <a href="#"><span class="badge text-bg-warning">Ubah</span></a>
-        <a href="hapus.php?id=<?= $mhs["id"];?>"><span class="badge text-bg-danger">Hapus</span></a>
+        <a href="ubah.php?id=<?= $mhs['id'];?>"  class="badge text-bg-warning">Ubah</a>
+        <a href="hapus.php?id=<?= $mhs["id"];?>" onclick="return confirm('yakin?');"><span class="badge text-bg-danger">Hapus</span></a>
       </td>
     </tr>
     <?php endforeach; ?>
